@@ -15,7 +15,7 @@ export default class extends window.casthub.{{extend}} {
         {{/if}}
     }
 
-    async mounted() {
+    public async mounted(): Promise<void> {
         await super.mounted();
     }
 }
