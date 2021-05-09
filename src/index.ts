@@ -1,3 +1,7 @@
+{{#if notTrigger}}
+import { CardIO } from '@casthub/types';
+
+{{/if}}
 {{#if isModule}}
 import css from '@/styles.scss';
 
@@ -18,4 +22,10 @@ export default class extends window.casthub.{{extend}} {
     public async mounted(): Promise<void> {
         await super.mounted();
     }
+{{#if notTrigger}}
+
+    async run(input: CardIO): Promise<void> {
+        //
+    }
+{{/if}}
 }

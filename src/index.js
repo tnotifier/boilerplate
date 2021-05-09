@@ -18,4 +18,10 @@ export default class extends window.casthub.{{extend}} {
     async mounted() {
         await super.mounted();
     }
+{{#if notTrigger}}
+
+    async run(input) {
+        //
+    }
+{{/if}}
 }
