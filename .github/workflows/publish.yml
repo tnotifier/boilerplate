@@ -46,10 +46,10 @@ jobs:
           node-version: 14
       - name: Clone Repo
         uses: actions/checkout@v2
-      - name: Set-up CastHub CLI
-        uses: casthub/cli-github-action@master
+      - name: Set-up TNotifier CLI
+        uses: tnotifier/cli-github-action@master
         with:
-          token: $\{{ secrets.CASTHUB_CLI_TOKEN }}
+          token: $\{{ secrets.TNOTIFIER_CLI_TOKEN }}
       - name: Get Yarn Cache Directory
         id: yarn-cache
         run: |
@@ -65,5 +65,5 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build
         run: yarn build
-      - name: Publish to CastHub
-        run: casthub {{content}}:upload -p
+      - name: Publish to TNotifier
+        run: tnotifier {{content}}:upload -p

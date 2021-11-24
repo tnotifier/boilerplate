@@ -15,7 +15,7 @@
             "@/*": ["./src/*"]
         },
         "types": [
-            "@casthub/types"
+            "@tnotifier/types"
         ]
     },
     "include": [

@@ -2,7 +2,7 @@
 import css from '@/styles.scss';
 
 {{/if}}
-export default class extends window.casthub.{{extend}} {
+export default class extends window.tnotifier.{{extend}} {
     constructor() {
         super();
         {{#if isModule}}

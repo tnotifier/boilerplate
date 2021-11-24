@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     {{#if isModule}}
-    "casthub": {
+    "tnotifier": {
         "width": 6,
         "height": 8,
         "min_width": 5,
@@ -15,7 +15,7 @@
         }
     },
     {{else}}
-    "casthub": {},
+    "tnotifier": {},
     {{/if}}
     "scripts": {
         "build": "cross-env NODE_ENV=production webpack-cli --config webpack.config.js",
@@ -23,7 +23,7 @@
     },
     "devDependencies": {
         "@babel/preset-env": "^7.12.11",
-        "@casthub/types": "*",
+        "@tnotifier/types": "*",
         "babel-loader": "^8.2.2",
         "cross-env": "^7.0.3",
         {{#if isModule}}
