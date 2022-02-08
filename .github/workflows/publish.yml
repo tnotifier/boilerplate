@@ -66,4 +66,4 @@ jobs:
       - name: Build
         run: yarn build
       - name: Publish to TNotifier
-        run: tnotifier {{content}}:upload -p
+        run: tnotifier {{contentKey}}:upload -p
