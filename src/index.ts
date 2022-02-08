@@ -1,12 +1,13 @@
 {{#if notTrigger}}
-import { CardIO } from '@tnotifier/types';
+import type { CardIO } from '@tnotifier/runtime';
 
 {{/if}}
+import { {{extendRoot}} } from '@tnotifier/runtime';
 {{#if isModule}}
 import css from '@/styles.scss';
 
 {{/if}}
-export default class extends window.tnotifier.{{extend}} {
+export default class extends {{extendRoot}}{{extendChild}}() {
     constructor() {
         super();
         {{#if isModule}}
@@ -19,12 +20,12 @@ export default class extends window.tnotifier.{{extend}} {
         {{/if}}
     }
 
-    async mounted(): Promise<void> {
+    async mounted() {
         await super.mounted();
     }
 {{#if notTrigger}}
 
-    async run(input: CardIO): Promise<void> {
+    async run(input: CardIO) {
         //
     }
 {{/if}}

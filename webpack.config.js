@@ -1,5 +1,5 @@
-const { resolve } = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
+const { resolve } = require('path');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -23,32 +23,25 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'ts-loader',
-                        options: {},
-                    },
-                ],
+                use: [{
+                    loader: 'ts-loader',
+                    options: {},
+                }],
             },
             {{/if}}
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            presets: [
-                                [
-                                    '@babel/preset-env',
-                                    {
-                                        targets: 'Chromium 87',
-                                    },
-                                ],
-                            ],
-                        },
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', {
+                                targets: 'Chromium 87',
+                            }],
+                        ],
                     },
-                ],
+                }],
             },
             {{#if isModule}}
             {

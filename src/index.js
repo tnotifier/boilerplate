@@ -1,8 +1,9 @@
+import { {{extendRoot}} } from '@tnotifier/runtime';
 {{#if isModule}}
 import css from '@/styles.scss';
 
 {{/if}}
-export default class extends window.tnotifier.{{extend}} {
+export default class extends {{extendRoot}}{{extendChild}}() {
     constructor() {
         super();
         {{#if isModule}}
